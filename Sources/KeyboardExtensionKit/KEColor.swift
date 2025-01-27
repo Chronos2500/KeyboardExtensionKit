@@ -20,4 +20,7 @@ public enum KEColor {
     public static let shiftForegroundActive = Color("ShiftForegroundActive", bundle: .module)
     public static let shiftBackgroundInactive = Color("ShiftBackgroundInactive", bundle: .module)
     public static let shiftBackgroundActive = Color("ShiftBackgroundActive", bundle: .module)
+
+    public static let keyButtonShadow = Color("KeyShadow", bundle: .module)
+    public static let commandButtonShadow = Color("CommandShadow", bundle: .module)
 }

@@ -51,6 +51,11 @@ public struct KERepeatableCommandButton: View {
             .foregroundColor(foregroundColor)
             .background( model.isTouching ? backgroundActiveColor : backgroundInactiveColor)
             .cornerRadius(cornerRadius)
+            .shadow(
+                color: KEColor.commandButtonShadow,
+                radius: 0.1,
+                y: 1
+            )
             .contentShape(Rectangle())
             .gesture(
                 DragGesture(minimumDistance: 0.0, coordinateSpace: .global)
