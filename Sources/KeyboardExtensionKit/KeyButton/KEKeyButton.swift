@@ -45,7 +45,7 @@ public struct KEKeyButton: View {
 
     public var body: some View {
         Button {
-            KEKeySound.tapModifier()
+            KEKeySound.tapClick()
             onKeyHandler()
         } label: {
             Text(verbatim: text)

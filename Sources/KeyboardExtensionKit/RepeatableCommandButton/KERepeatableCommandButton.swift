@@ -75,9 +75,10 @@ public struct KERepeatableCommandButton: View {
         Group {
             if let image = image {
                 image
+                    .font(.system(size: 18))
             } else if let text = text {
                 Text(text)
-                    .font(.system(size: 13))
+                    .font(.system(size: 15))
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
             }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 public struct KECommandButton: View {
-    private let image: Image
+    private let image: Image?
+    private let text: String?
     private let width: CGFloat?
     private let height: CGFloat?
     private let maxWidth: CGFloat?
@@ -32,6 +33,32 @@ public struct KECommandButton: View {
         onCommandHandler: @escaping () -> Void
     ) {
         self.image = image
+        self.text = nil
+        self.width = maxWidth == nil ? width : nil
+        self.height = maxHeight == nil ? height : nil
+        self.maxWidth = maxWidth
+        self.maxHeight = maxHeight
+        self.cornerRadius = cornerRadius
+        self.foregroundColor = foregroundColor
+        self.backgroundInactiveColor = backgroundInactiveColor
+        self.backgroundActiveColor = backgroundActiveColor
+        self.onCommandHandler = onCommandHandler
+    }
+
+    public init(
+        text: String,
+        width: CGFloat? = 40,
+        height: CGFloat? = 40,
+        maxWidth: CGFloat? = nil,
+        maxHeight: CGFloat? = nil,
+        cornerRadius: CGFloat = 8,
+        foregroundColor: Color = KEColor.commandForeground,
+        backgroundInactiveColor: Color = KEColor.commandBackgroundInactive,
+        backgroundActiveColor: Color = KEColor.commandBackgroundActive,
+        onCommandHandler: @escaping () -> Void
+    ) {
+        self.image = nil
+        self.text = text
         self.width = maxWidth == nil ? width : nil
         self.height = maxHeight == nil ? height : nil
         self.maxWidth = maxWidth
@@ -45,10 +72,18 @@ public struct KECommandButton: View {
 
     public var body: some View {
         Button {
-            KEKeySound.tapClick()
+            KEKeySound.tapModifier()
             onCommandHandler()
         } label: {
-            image
+            if let text = text {
+                Text(verbatim: text)
+                    .font(.system(size: 15))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+            } else {
+                image
+                    .font(.system(size: 16))
+            }
         }
         .buttonStyle(.command(
             width: width,
