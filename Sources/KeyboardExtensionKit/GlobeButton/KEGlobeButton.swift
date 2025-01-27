@@ -49,6 +49,12 @@ public struct KEGlobeButton: View {
             .foregroundColor(foregroundColor)
             .background(isPressed ? backgroundActiveColor : backgroundInactiveColor)
             .cornerRadius(cornerRadius)
+            .compositingGroup()
+            .shadow(
+                color: KEColor.commandButtonShadow,
+                radius: 0.1,
+                y: 1
+            )
             .overlay {
                 KEGlobeButtonOverlay { from, with in
                     onGlobeHandler(from, with)

@@ -88,6 +88,7 @@ public struct KERepeatableCommandButton: View {
         .foregroundColor(foregroundColor)
         .background( model.isTouching ? backgroundActiveColor : backgroundInactiveColor)
         .cornerRadius(cornerRadius)
+        .compositingGroup()
         .shadow(
             color: KEColor.commandButtonShadow,
             radius: 0.1,

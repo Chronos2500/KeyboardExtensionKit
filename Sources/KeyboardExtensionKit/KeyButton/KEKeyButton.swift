@@ -63,11 +63,6 @@ public struct KEKeyButton: View {
             backgroundActiveColor: backgroundActiveColor,
             cornerRadius: cornerRadius
         ))
-        .shadow(
-            color: KEColor.keyButtonShadow,
-            radius: 0.1,
-            y: 1
-        )
     }
 }
 

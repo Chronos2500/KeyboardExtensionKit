@@ -24,6 +24,11 @@ struct KECommandButtonStyle: ButtonStyle {
             .foregroundColor(foregroundColor)
             .background(configuration.isPressed ? backgroundActiveColor : backgroundInactiveColor)
             .cornerRadius(cornerRadius)
+            .shadow(
+                color: KEColor.commandButtonShadow,
+                radius: 0.1,
+                y: 1
+            )
     }
 }
 
