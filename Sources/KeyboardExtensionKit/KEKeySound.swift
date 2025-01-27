@@ -25,4 +25,9 @@ public enum KEKeySound {
         // key_press_modifier.caf: 1156
         playSystemSound("key_press_modifier.caf")
     }
+
+    public static func tapClick() {
+        // key_press_modifier.caf: 1123
+        playSystemSound("key_press_click.caf")
+    }
 }

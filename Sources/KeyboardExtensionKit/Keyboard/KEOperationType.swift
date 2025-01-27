@@ -11,4 +11,5 @@ public enum KEOperationType {
     case globe(from: UIView, with: UIEvent)
     case insert(text: String)
     case delete(length: Int)
+    case adjustPosition(offset: Int)
 }

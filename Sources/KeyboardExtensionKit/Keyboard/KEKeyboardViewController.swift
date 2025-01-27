@@ -50,6 +50,8 @@ open class KEKeyboardViewController<KV: KEKeyboardViewProtocol>: UIInputViewCont
             textDocumentProxy.insertText(text)
         case .delete(let length):
             textDocumentProxy.deleteBackward(length: length)
+        case .adjustPosition(let offset):
+            textDocumentProxy.adjustTextPosition(byCharacterOffset: offset)
         }
     }
 }

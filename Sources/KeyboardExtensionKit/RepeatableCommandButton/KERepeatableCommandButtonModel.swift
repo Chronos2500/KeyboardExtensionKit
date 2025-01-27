@@ -22,11 +22,13 @@ public final class KERepeatableCommandButtonModel: ObservableObject {
     func touchDown() {
         if isTouching { return }
         isTouching = true
+        KEKeySound.tapDelete()
         onCommandHandler()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             guard let self else { return }
             self.counter += 1
             if self.threshold < self.counter {
+                KEKeySound.tapDelete()
                 self.onCommandHandler()
             }
         }

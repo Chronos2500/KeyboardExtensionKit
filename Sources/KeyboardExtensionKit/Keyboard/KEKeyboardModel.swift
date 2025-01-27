@@ -16,6 +16,7 @@ public protocol KEKeyboardModelProtocol: ObservableObject {
     func handleInputModeList(from: UIView, with: UIEvent)
     func insert(text: String)
     func delete(length: Int)
+    func adjustPosition(offset: Int)
 }
 
 open class KEKeyboardModel: KEKeyboardModelProtocol {
@@ -39,4 +40,9 @@ open class KEKeyboardModel: KEKeyboardModelProtocol {
     open func delete(length: Int) {
         operationHandler(.delete(length: length))
     }
+
+    open func adjustPosition(offset: Int) {
+        operationHandler(.adjustPosition(offset: offset))
+    }
+
 }

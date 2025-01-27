@@ -45,9 +45,13 @@ public struct KEKeyButton: View {
 
     public var body: some View {
         Button {
+            KEKeySound.tapModifier()
             onKeyHandler()
         } label: {
             Text(verbatim: text)
+                .font(.system(size: 15))
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
         }
         .buttonStyle(.command(
             width: width,
@@ -71,7 +75,7 @@ struct KEKeyButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color.red
-            KEKeyButton(text: "A", onKeyHandler: {})
+            KEKeyButton(text: "開く", onKeyHandler: {})
 
 
         }

@@ -45,6 +45,7 @@ public struct KECommandButton: View {
 
     public var body: some View {
         Button {
+            KEKeySound.tapClick()
             onCommandHandler()
         } label: {
             image
@@ -59,6 +60,11 @@ public struct KECommandButton: View {
             backgroundActiveColor: backgroundActiveColor,
             cornerRadius: cornerRadius
         ))
+        .shadow(
+            color: KEColor.commandButtonShadow,
+            radius: 0.1,
+            y: 1
+        )
     }
 }
 
